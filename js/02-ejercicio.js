@@ -1,5 +1,4 @@
 const ciudades = [ ]
-const ciudadesamostrar = [ ]
 let div = document.getElementById('pantalla')
 let textoHTML =''
 let i = 0
@@ -17,32 +16,19 @@ do {
       }
   } while (confirm("¿Deseas agregar otra ciudad?") || (i<2));
 
-textoHTML += `<p> El arreglo de ciudades tiene ${ciudades.length}${" elementos"}  </p>`
+textoHTML += `<p> Antes de agregar elementos, el arreglo de ciudades tiene ${ciudades.length}${" elementos"}  </p>`
 textoHTML += `<p> Elemento primer posición: ${ciudades[0]} </p>`
 textoHTML += `<p> Elemento tercer posición: ${ciudades[2]} </p>`
 textoHTML += `<p> Elemento última posición: ${ciudades[(ciudades.length - 1)]} </p>`
-textoHTML += `<p> Elemento última posición: PARIS</p>`
-
-div.innerHTML = textoHTML
-/* Arma vector de salida */
-i=0
-for(let j=0; j<=(ciudades.length); j++){
-    if (j==1){
-      ciudadesamostrar[1]= "BARCELONA"
-    }
-    else {
-      ciudadesamostrar[j]=ciudades[i] 
-      i++
-    }
-  }
-  ciudadesamostrar[(ciudades.length+1)]="PARÍS"
-div = document.getElementById('pantalla')
+ciudades.push("PARIS")
+textoHTML += `<p> Elemento última posición:${ciudades[(ciudades.length-1)]}</p>`
+ciudades[1]= "BARCELONA"
 textoHTML += '<h1> Arreglo de ciudades: </h1>' 
 //mostrar el vector de salida en pantalla
 textoHTML += '<ul>'
-for(let j=0; j<(ciudadesamostrar.length); j++){
-      textoHTML += `<li>${ ciudadesamostrar[j] }</li>`
-      console.log(ciudadesamostrar)
+for(let j=0; j<(ciudades.length); j++){
+      textoHTML += `<li>${ ciudades[j] }</li>`
+      console.log(ciudades)
 }
 textoHTML += '</ul>'
 
