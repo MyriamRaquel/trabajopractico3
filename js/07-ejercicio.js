@@ -18,19 +18,16 @@ function calculatabla(numero){
     textoHTML += `<td class="text-center">${resultado}</td>`
     textoHTML += ' </tr>'
 
-}
+  }
 
   textoHTML += ' </tbody>'
   textoHTML += ' </table>'
   div.innerHTML = textoHTML
 }
 
-
 const numero = parseInt(prompt('Ingresa el número para mostrar su tabla'))
 let textoHTML = ""
-let div = document.getElementById('pantalla')
 
- 
 if (!isNaN(numero)){
       calculatabla(numero)
     }
